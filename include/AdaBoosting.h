@@ -10,6 +10,8 @@
 struct ClassifierInfo {
     // 分段区间
     int x;
+    // 是否反向区间
+    bool isTrans;
     // 错误数量
     int errSampleNum;
     // 权重错误率
@@ -34,6 +36,8 @@ public:
 
     bool Run();
 
+    void Output();
+
 private:
     // 判定分类是否结束
     bool JudgeFinish();
@@ -41,9 +45,10 @@ private:
     ClassifierInfo GetClassifierInfo();
     // 更新样本权重
     void UpdateSamplesRate(float errRate);
+    void OutputSamplesRate();
 
-    std::vector<SampleInfo> samples; // 入参样本
-    std::vector<ClassifierInfo> classifier; // 弱分类器权重
+    std::vector<SampleInfo> m_samples; // 入参样本
+    std::vector<ClassifierInfo> m_classifier; // 弱分类器权重
 };
 
 

@@ -11,19 +11,20 @@ using namespace std;
 int main()
 {
     std::vector<std::pair<int, int>> samples = {
-            {-10, 1},
-            {-8, 1},
-            {-6, 0},
-            {-4, 0},
-            {-2, 1},
-            {0, 1},
-            {2, 1},
-            {4, 1},
-            {6, 0},
-            {8, 0},
+            {-10, 0},
+            {-8, 0},
+            {-6, 1},
+            {-4, 1},
+            {-2, 0},
+            {0, 0},
+            {2, 0},
+            {4, 0},
+            {6, 1},
+            {8, 1},
     };
     AdaBoosting ada(samples);
     ada.Run();
+    ada.Output();
 
     return 0;
 }
